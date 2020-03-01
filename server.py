@@ -1,5 +1,4 @@
-from flask import Flask , render_template , request, url_for, redirect
-
+from flask import Flask , render_template , request, url_for, redirect 
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,7 +18,7 @@ def write_to_file(data):
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
-        file = database.write(f'\n{email}, {subject} , {message}')
+        file = database.write(f"\n{email}, {subject} , {message}")
 
 
 
