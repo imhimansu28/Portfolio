@@ -28,7 +28,7 @@ def submit_form():
     if request.method == "POST":
         data = request.form.to_dict()
         print(data)
-        return 'form submitted'
+        return render_template('./thanku.html')
     else:
         return 'something went worng. Try again !'
 
