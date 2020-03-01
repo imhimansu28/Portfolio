@@ -1,4 +1,4 @@
-from flask import Flask , render_template , request
+from flask import Flask , render_template , request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -11,6 +11,16 @@ def my_home():
 
 def my_page(page_name):
     return render_template(page_name)
+
+# create a database 
+
+def write_to_file(data):
+    with open('database.txt', mode= 'a') as database :
+        email = data["email"]
+        subject = data["subject"]
+        message = data["message"]
+        file = database.write(f'\n{email}, {subject} , {message}')
+
 
 
 @app.route('/submit_form', methods = ['POST', 'GET'])
